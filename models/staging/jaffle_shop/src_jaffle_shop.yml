@@ -14,7 +14,10 @@ sources:
             tests:
               - unique
               - not_null
-
+          - name: first_name
+            description: first name
+          - name: last_name
+            description: last name
       - name: orders
         description: Raw orders data.
         columns:
@@ -23,7 +26,9 @@ sources:
             tests:
               - unique
               - not_null
-        loaded_at_field: _etl_loaded_at
-        freshness:
-          warn_after: {count: 12, period: hour}
-          error_after: {count: 24, period: hour}
+          - name: user_id
+            description: user id.
+          - name: order_date
+            description: order date
+          - name: status
+            description: order status
